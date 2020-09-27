@@ -1,8 +1,6 @@
 import java.util.concurrent.atomic.LongAdder;
 
 public class Main {
-    static long total = 0;
-
     public static void main(String[] args) throws InterruptedException {
         LongAdder adder = new LongAdder();
         Store store1 = new Store(adder);
@@ -21,6 +19,6 @@ public class Main {
         t2.join();
         t3.join();
 
-        System.out.println(total);
+        System.out.println("Result: " + adder.sum());
     }
 }
